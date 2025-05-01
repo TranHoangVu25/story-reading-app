@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "484911757954",
+    "project_id": "callphoneapi",
+    "storage_bucket": "callphoneapi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484911757954:android:c0a969f10132b7acd6529b",
+        "android_client_info": {
+          "package_name": "com.example.finalassigment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484911757954-k6dlavmd95874k3706aci74kqdb132ot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalassigment",
+            "certificate_hash": "e9cca17f2c0e3648d693cd7fdbd501a1d96244bd"
+          }
+        },
+        {
+          "client_id": "484911757954-3r9p53erpp66tqplv7qlvgm115ij36hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb5oqdyI0-qZiqRUV9o-afMEcL0pqdyuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484911757954-3r9p53erpp66tqplv7qlvgm115ij36hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

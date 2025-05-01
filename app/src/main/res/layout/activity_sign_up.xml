@@ -1,0 +1,175 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:id="@+id/main"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:textSize="24sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tvSignupTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sign Up"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Email -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMAIL ADDRESS *"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter Email Address"
+        android:layout_marginTop="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VERIFICATION CODE *"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_otp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:hint="OTP"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send OTP"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="end"
+            android:padding="8dp" />
+    </TableRow>
+
+    <!-- Password -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PASSWORD *"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"/>
+    <EditText
+        android:id="@+id/edt_pass"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter password"
+        android:drawableEnd="@drawable/eye_close"
+        android:inputType="textPassword"
+        android:longClickable="false"
+        android:textIsSelectable="false"
+        android:layout_marginTop="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6–16 characters"
+        android:textSize="10sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Re-type Password -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RE-TYPE PASSWORD *"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"/>
+    <EditText
+        android:id="@+id/edt_re_pass"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        android:layout_marginTop="4dp"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6–16 characters"
+        android:textSize="10sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Nickname -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Name *"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"/>
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="User nickname"
+        android:layout_marginTop="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Max 20 characters"
+        android:textSize="10sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Terms & Privacy -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="By signing up, I agree to the Terms of Use and Privacy Policy of WEBTOON"
+        android:textSize="12sp"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Marketing info -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WEBTOON collects and processes your email address for marketing purposes. You can easily unsubscribe at any time via the opt-out link in the marketing emails."
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- SIGN UP Button -->
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="SIGN UP"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
