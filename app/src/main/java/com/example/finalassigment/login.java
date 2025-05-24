@@ -3,9 +3,14 @@ package com.example.finalassigment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +57,6 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // 1. Buộc logout Facebook session cũ ngay khi mở Activity
         FacebookSdk.setIsDebugEnabled(true);
         FacebookSdk.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
@@ -67,7 +71,7 @@ public class login extends AppCompatActivity {
 
         // 3. Khởi tạo FirebaseAuth & UI component
         mAuth = FirebaseAuth.getInstance();
-        btn_phone = findViewById(R.id.btnPhoneNum);
+//        btn_phone = findViewById(R.id.btnPhoneNum);
         btn_gg    = findViewById(R.id.btnGoogle);
         btn_fb    = findViewById(R.id.btnFacebook);
         btn_login = findViewById(R.id.btn_login);
@@ -85,10 +89,10 @@ public class login extends AppCompatActivity {
 
         // Listeners
         btn_gg.setOnClickListener(v -> signInWithGoogle());
-        btn_phone.setOnClickListener(v -> {
-            startActivity(new Intent(this, PhoneLoginActivity.class));
-            finish();
-        });
+//        btn_phone.setOnClickListener(v -> {
+//            startActivity(new Intent(this, PhoneLoginActivity.class));
+//            finish();
+//        });
         tv_others.setOnClickListener(v -> {
             startActivity(new Intent(this, SignUp.class));
             finish();
@@ -130,6 +134,45 @@ public class login extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 });
+
+        edt_password.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (edt_password.getRight() - edt_password.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    if (edt_password.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+                        // Hiện mật khẩu
+                        edt_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        edt_password.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_open, 0);
+                    } else {
+                        // Ẩn mật khẩu
+                        edt_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        edt_password.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_close, 0);
+                    }
+                    edt_password.setSelection(edt_password.length()); // Giữ con trỏ ở cuối
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        LinearLayout container = findViewById(R.id.container_username);
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setShape(GradientDrawable.RECTANGLE);
+        drawable.setCornerRadius(24f);
+        drawable.setStroke(2, Color.parseColor("#CCCCCC")); // Viền xám 2dp
+        drawable.setColor(Color.WHITE);
+        container.setBackground(drawable);
+
+        LinearLayout  editText = findViewById(R.id.container_pass);
+        GradientDrawable drawable1 = new GradientDrawable();
+        drawable1.setShape(GradientDrawable.RECTANGLE);
+        drawable1.setCornerRadius(24f);
+        drawable1.setStroke(2, Color.parseColor("#CCCCCC")); // Viền xám
+        drawable1.setColor(Color.WHITE);
+
+        editText.setBackground(drawable);
+
+
     }
 
     private boolean checkLogin(String username, String password) {

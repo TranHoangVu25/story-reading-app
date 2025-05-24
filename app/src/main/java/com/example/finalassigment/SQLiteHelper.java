@@ -17,6 +17,10 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
                     "email TEXT NOT NULL, " +
                     "password TEXT NOT NULL, " +
                     "username TEXT)";
+//    private static final String CREATE_STORIES_TABLE =
+//            "CREATE TABLE stories ("+
+//                    "id INTEGER PRIMARY KEY AUTOINRECEMENT,"+
+//                    "title "
 
     public MyDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
